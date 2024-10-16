@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+body {
+    position: relative;
+    font-family: "IBM Plex Sans", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1c1c1c;
+    user-select: none;
+    height: 100vh;
+    height: 100svh;
+}
+
+.grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    grid-template-rows: repeat(20, auto);
+    padding: 0.6vh;
+    gap: 0.3vh;
+    border-radius: 0.6vh;
+    background-color: #292929;
+}
+
+.grid>div {
+    --cell-size: min(4.5vh, 7.5vh);
+    height: var(--cell-size);
+    width: var(--cell-size);
+    border-radius: 0.3vh;
+    background-color: #373737;
+}
+
+.grid>div.ghost {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.grid>div.I {
+    background-color: #b40000;
+}
+
+.grid>div.J {
+    background-color: #b30092;
+}
+
+.grid>div.L {
+    background-color: #000cb3;
+}
+
+.grid>div.O {
+    background-color: #00b3b0;
+}
+
+.grid>div.S {
+    background-color: #00b315;
+}
+
+.grid>div.Z {
+    background-color: #ccc500;
+}
+
+.grid>div.T {
+    background-color: #ffa11e;
+}
+
+.grid>div.I,
+.grid>div.J,
+.grid>div.L,
+.grid>div.O,
+.grid>div.S,
+.grid>div.Z,
+.grid>div.T,
+.grid>div.ghost,
+.refresh-button {
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.2),
+        inset -2px -2px 2px rgba(1, 8, 89, 0.2);
+}
+
+.grid>div.hide {
+    animation: hide 0.5s;
+}
+
+@keyframes hide {
+    0% {
+        transform: scale(0.8) rotate(30deg);
+    }
+
+    45% {
+        transform: scale(0.8) rotate(-30deg);
+    }
+
+    90% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+.refresh-button {
+    display: none;
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    padding: 8px;
+    border-radius: 16px;
+    cursor: pointer;
+    background-color: #e4e4e4;
+}
+
+.refresh-button>img {
+    width: 100%;
+    height: 100%;
+}
+
+.info-box {
+    color: #fff;
+    font-size: 24px;
+    z-index: 100;
+    top: 16px;
+    left: 16px;
+    position: absolute;
+}
+  
